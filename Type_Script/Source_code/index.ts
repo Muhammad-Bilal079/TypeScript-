@@ -153,8 +153,53 @@ enum Urls{
     Register = "https://google.com"
 }
 
-console.log(Urls.Home);
+// console.log(Urls.Home);
 
 // **************************
 
 // Unknown Type in typescript
+
+// yeah jab use karain gay jab hamain anany walay variable ki value ki type ka pata na ho 
+
+let notSure:unknown = 4;
+// console.log(notSure);
+
+if(typeof notSure === "number"){
+    // console.log("this is number");
+}else if(typeof notSure === "string"){
+    // console.log("this is string");
+}else if(typeof notSure === "boolean"){
+    // console.log("this is boolean");
+}else{
+    // console.log("this is unknown");
+}
+
+// **************************
+// Void type in typescript
+
+function logMessage(message:string):void{
+    console.log(message);
+    return undefined;
+    
+}
+
+// console.log(logMessage("hello"));
+
+// **************************
+// Type inference 
+
+let message = "hello Bilal welcome to typescript";
+// message = 20;  // ager hum type define na karain phir bhi bad main change nahi karsaktay
+// console.log(message);
+
+// type assertion
+
+// type assertion is liay zaruri hai qk variable ki type any hai to jab hum is variable ka use karain gay to suggestion nahi 
+// dyga qk editor ko is variable ki type any maloom hai but hakikat main variable ki type string hai
+
+let message1:any = "hello Bilal welcome to typescript";
+let strlength:number = (message1 as string).length; //yahan per type assertion wala kam kia hai warna suggestion nhi deta 
+// console.log(strlength);
+
+// **************************
+// Union type in typescript
